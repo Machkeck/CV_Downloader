@@ -14,18 +14,20 @@ html {
 body {
   overflow-x: hidden;
   margin: 0
+
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background-color: #e5ffff;
+  background-color: #b2ebf2;
+  z-index: -200;
 }
 
 .page_header {
   width: 100%;
   height: 6vh;
-  background-color: #b2ebf2;
+  background-color: #81b9bf;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -34,20 +36,28 @@ body {
 .page_content {
   width: 100%;
   height: 90vh;
+  position: relative;
+}
+
+.draggable_wrapper{
+    position: relative;
+    z-index: 500;
 }
 
 .curtain {
   height: 90vh;
   width: 100vw;
-  background-color: red;
-  opacity: 0.5;
-  /*position: absolute;
+  background:rgba(229, 255, 255, 0.7);
+  /*opacity: 0.5;
+  position: absolute;
   left: 20%;
   top: 40%;*/
   -ms-touch-action: none;
   touch-action: none;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
+  position:absolute;
+  z-index: 100;
 }
 
 .curtain_handle{
@@ -57,6 +67,13 @@ body {
   background-color: black;
   right:20px;
   top:50%;
+}
+
+.page_background{
+  position: absolute;
+  left:50%;
+  top:50%;
+  z-index: 50;
 }
 
 .page_footer {
