@@ -30,6 +30,7 @@
     "mysql": "^2.14.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-draggable": "^2.2.6"
+    "react-draggable": "^2.2.6",
+    "react-tilt": "^0.1.3"
   }
 }

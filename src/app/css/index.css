@@ -39,6 +39,15 @@ body {
   position: relative;
 }
 
+.cv_card{
+  padding: 50px;
+  background-color: beige;
+  height:50vh;
+  width:30vw;
+  color: black;
+  cursor: pointer;
+}
+
 .draggable_wrapper{
     position: relative;
     z-index: 500;
@@ -71,8 +80,8 @@ body {
 
 .page_background{
   position: absolute;
-  left:50%;
-  top:50%;
+  left:40%;
+  top:30%;
   z-index: 50;
 }
 
@@ -81,7 +90,7 @@ body {
   height: 4vh;
   position: absolute;
   bottom: 0;
-  background-color: #b2ebf2;
+  background-color: #81b9bf;
   display: flex;
   align-items: center;
   padding: 5px;
