@@ -14,7 +14,6 @@ html {
 body {
   overflow-x: hidden;
   margin: 0
-
 }
 
 #app {
@@ -22,6 +21,8 @@ body {
   height: 100vh;
   background-color: #b2ebf2;
   z-index: -200;
+  background-color: #b2ebf2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%239C92AC' fill-opacity='0.14'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .page_header {
@@ -30,7 +31,30 @@ body {
   background-color: #81b9bf;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
+}
+
+.circle {
+  background-color: #ca6262;
+  /*background: url("../images/download-arrow.svg");
+  background-position: center;
+  background-size: 90% 90%;*/
+  padding: 10px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+}
+.circle:hover {
+  background-color: #ca6262;
+  /*background: url("../images/download-arrow.svg");
+  background-position: center;
+  background-size: 90% 90%;*/
+  padding: 11px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  -webkit-box-shadow: 10px 10px 61px -15px rgba(255,255,255,1);
+-moz-box-shadow: 10px 10px 61px -15px rgba(255,255,255,1);
+box-shadow: 10px 10px 61px -15px rgba(255,255,255,1);
 }
 
 .page_content {
@@ -39,24 +63,47 @@ body {
   position: relative;
 }
 
-.cv_card{
-  padding: 50px;
-  background-color: beige;
-  height:50vh;
-  width:30vw;
-  color: black;
-  cursor: pointer;
+.pdf_link {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
 
-.draggable_wrapper{
-    position: relative;
-    z-index: 500;
+.page_tips {
+  position: absolute;
+  background-color: #ca6262;
+  color: white;
+  right: 10%;
+  top: 50%;
+  z-index: 550;
+  padding: 30px;
+  -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+.cv_card {
+  background-color: white;
+  height: 50vh;
+  width: 30vw;
+  color: black;
+  cursor: pointer;
+  background-image: url("../images/CV_maciej_wlazlo_01.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 10px 10px 79px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 79px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 79px -2px rgba(0, 0, 0, 0.75);
+}
+
+.draggable_wrapper {
+  position: relative;
+  z-index: 500;
 }
 
 .curtain {
   height: 90vh;
   width: 100vw;
-  background:rgba(229, 255, 255, 0.7);
+  background: rgba(229, 255, 255, 0.7);
   /*opacity: 0.5;
   position: absolute;
   left: 20%;
@@ -65,23 +112,53 @@ body {
   touch-action: none;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
-  position:absolute;
+  position: absolute;
   z-index: 100;
+  -webkit-box-shadow: 25px 0px 63px -20px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 25px 0px 63px -20px rgba(0, 0, 0, 0.57);
+  box-shadow: 25px 0px 63px -20px rgba(0, 0, 0, 0.57);
 }
 
-.curtain_handle{
+.curtain_handle {
   position: absolute;
   height: 10vh;
-  width: 2vh;
-  background-color: black;
-  right:20px;
-  top:50%;
+  width: 4vh;
+  background-color: #7fb7bd;
+  right: 20px;
+  top: 50%;
+  -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
 
-.page_background{
+.page_info {
   position: absolute;
-  left:40%;
-  top:30%;
+  bottom: 10vh;
+  left: 50%;
+  padding: 10px;
+  font-size: 20px;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 1;
+  -moz-animation: fadeIn 1s linear;
+  -webkit-animation: fadeIn 1s linear;
+  animation: fadeIn 1s linear;
+}
+
+.page_background {
+  position: absolute;
+  left: 42%;
+  top: 25%;
   z-index: 50;
 }
 

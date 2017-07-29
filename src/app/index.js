@@ -1,98 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Tilt from 'react-tilt'
-import Draggable, {DraggableCore} from 'react-draggable';
+//import Tilt from 'react-tilt'
+//import Draggable, {DraggableCore} from 'react-draggable';
 
 require('./css/index.css')
 
-class Background extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      position: "closed"
-    };
-  }
+let img = require('./images/download-arrow.svg')
 
-  render() {
-    return (
-      <div className="">
-        <Tilt className="Tilt" options={{
-          max: 25
-        }} style={{
-          height: 250,
-          width: 250
-        }}>
-          <div className="Tilt-inner cv_card">
-            👽 CV
-          </div>
-        </Tilt>
-      </div>
-    )
-  }
-}
-
-class Curtain extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      position: "closed"
-    };
-  }
-
-  clickHandle(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    let bodyRect = document.body.getBoundingClientRect(),
-      curtain = document.getElementById('box1'),
-      elemRect = curtain.getBoundingClientRect(),
-      offset = elemRect.right - bodyRect.right,
-      begin,
-      end;
-    console.log('Element is ' + offset + ' vertical pixels from <body>');
-    console.log(this)
-
-    if (this.state.position === "closed") {
-      begin = 0;
-      end = -(bodyRect.right - 60);
-      this.setState({position: "opened"});
-    } else {
-      begin = -(bodyRect.right - 60);
-      end = 0;
-      this.setState({position: "closed"});
-    }
-
-    console.log(begin, end)
-
-    curtain.animate([
-      // keyframes
-      {
-        transform: `translateX(${begin}px)`
-      }, {
-        transform: `translateX(${end}px)`
-      }
-    ], {
-      // timing options
-      duration: 1000,
-      easing: "ease-in-out",
-      fill: "forwards"
-
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <div id="box1" className="curtain">
-
-          <div className="curtain_handle handle" onClick={this.clickHandle.bind(this)}></div>
-        </div>
-      </div>
-    )
-  }
-
-}
+import Background from './components/background'
+import Curtain from './components/curtain'
 
 //component
 class AppComponent extends React.Component {
@@ -102,14 +19,19 @@ class AppComponent extends React.Component {
       <div>
         <header className="page_header">
           <h2>Hello {this.props.name}</h2>
+          <div className="circle"><img src={img} height="20" width="20"/></div>
         </header>
         <div className="page_content">
+          <div id="page_tips" className="page_tips">
+            Press handle to unlock
+          </div>
           <div className="page_background">
             <Background></Background>
           </div>
           <div className="draggable_wrapper">
             <Curtain></Curtain>
           </div>
+          <div id="page_info" className="page_info">Click CV to download</div>
         </div>
         <footer className="page_footer">
           <p>Github Link</p>
