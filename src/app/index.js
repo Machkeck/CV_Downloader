@@ -6,10 +6,11 @@ import ReactDOM from 'react-dom'
 
 require('./css/index.css')
 
-let img = require('./images/download-arrow.svg')
+
 
 import Background from './components/background'
 import Curtain from './components/curtain'
+import DownloadBtn from './components/downloadBtn'
 
 //component
 class AppComponent extends React.Component {
@@ -18,8 +19,8 @@ class AppComponent extends React.Component {
     return (
       <div>
         <header className="page_header">
-          <h2>Hello {this.props.name}</h2>
-          <div className="circle"><img src={img} height="20" width="20"/></div>
+          <h2>{this.props.title}</h2>
+          <DownloadBtn></DownloadBtn>
         </header>
         <div className="page_content">
           <div id="page_tips" className="page_tips">
@@ -34,7 +35,8 @@ class AppComponent extends React.Component {
           <div id="page_info" className="page_info">Click CV to download</div>
         </div>
         <footer className="page_footer">
-          <p>Github Link</p>
+        <p>Tech used: HTML5, CSS3, javascript(ES6), React.js, Webpack</p>
+          <a className="footer-links" href="https://github.com/Machkeck/CV_Downloader">Github Link</a>
         </footer>
 
       </div>
@@ -43,7 +45,7 @@ class AppComponent extends React.Component {
 }
 
 ReactDOM.render(
-  <AppComponent name="Maciek"/>, app)
+  <AppComponent title="CV Downloader"/>, app)
 
 /*var React = require('react')
   var ReactDOM = require('react-dom')
