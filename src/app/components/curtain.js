@@ -30,9 +30,6 @@ export default class Curtain extends React.Component {
 
     info.className += " fadeIn";
 
-    console.log('Element is ' + offset + ' vertical pixels from <body>');
-    console.log(this)
-
     if (this.state.position === "closed") {
       begin = 0;
       end = -(bodyRect.right - 70);
@@ -42,8 +39,6 @@ export default class Curtain extends React.Component {
       end = 0;
       this.setState({position: "closed"});
     }
-
-    console.log(begin, end)
 
     curtain.animate([
       // keyframes

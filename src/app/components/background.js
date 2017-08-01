@@ -7,8 +7,18 @@ export default class Background extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      position: "closed"
+      highlighted: "false",
+      className: "Tilt-inner cv_card"
     };
+  }
+
+  clickGlow() {
+    this.setState({highlighted: "true"});
+    this.setState({className: "Tilt-inner cv_card highlighted"});
+    setTimeout(() => {
+      this.setState({highlighted: "false"})
+      this.setState({className: "Tilt-inner cv_card"});
+    }, 1000)
   }
 
   render() {
@@ -20,9 +30,8 @@ export default class Background extends React.Component {
           height: 250,
           width: 250
         }}>
-          <div className="Tilt-inner cv_card">
-            <a href={pdf} download="cv_maciej_wlazlo_pdf" className="pdf_link">
-            </a>
+          <div className={this.state.className} onClick={this.clickGlow.bind(this)}>
+            <a href={pdf} download="cv_maciej_wlazlo_pdf" className="pdf_link"></a>
           </div>
         </Tilt>
       </div>

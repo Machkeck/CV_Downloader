@@ -6,8 +6,6 @@ import ReactDOM from 'react-dom'
 
 require('./css/index.css')
 
-
-
 import Background from './components/background'
 import Curtain from './components/curtain'
 import DownloadBtn from './components/downloadBtn'
@@ -35,7 +33,7 @@ class AppComponent extends React.Component {
           <div id="page_info" className="page_info">Click CV to download</div>
         </div>
         <footer className="page_footer">
-        <p>Tech used: HTML5, CSS3, javascript(ES6), React.js, Webpack</p>
+          <p>Tech used: HTML5, CSS3, javascript(ES6), React.js, Webpack</p>
           <a className="footer-links" href="https://github.com/Machkeck/CV_Downloader">Github Link</a>
         </footer>
 
