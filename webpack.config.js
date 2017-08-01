@@ -1,4 +1,5 @@
 var path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -8,6 +9,15 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/app/'
   },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ],
+
   module: {
     loaders: [
       {
@@ -22,7 +32,7 @@ module.exports = {
         loader: 'style-loader!css-loader'
       }, {
         test: /\.(svg|pdf)$/,
-        loader: 'file-loader'
+        loader: 'url-loader'
       }
     ]
   }
