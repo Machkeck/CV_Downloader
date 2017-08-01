@@ -159,7 +159,7 @@ body {
 
 .page_info {
   position: absolute;
-  bottom: 10vh;
+  bottom: calc(50% - 300px);
   left: calc(50% - 175px);
   padding: 10px;
   font-size: 20px;
@@ -187,7 +187,7 @@ body {
 .page_background {
   position: absolute;
   left: calc(50% - 175px);
-  top: 25%;
+  top: calc(50% - 250px);
   z-index: 50;
 }
 
